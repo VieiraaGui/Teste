@@ -1,16 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello world</title>
-
-    <script >
-       alert("VOCÊ entrou no site");
-    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bloquear cópia de conteúdo</title>
+  
+<script>
+function mensagem(){
+  var txt = "TEXTO bloqueado em nome de jesus";
+    return false;
+}
+  
+function blockCopy(Event){
+    var Event = Event ? Event : window.event;
+    var tecla = (Event.keyCode) ? Event.keyCode : Event.which;
+    if(tecla == 17){
+        mensagem();
+    }
+}
+</script>
+  
 </head>
+  
 <body>
-    Teste 123
+Texto que texta textando ou seta de outro lugar
+<br />
+<input type="text" value="tente" />
+</body>
+</html>
+  
+<script>
+    document.onkeypress = blockCopy;
+    document.onkeydown = blockCopy;
+    document.oncontextmenu = mensagem;
+document.onke
+</script>
 </body>
 </html>
